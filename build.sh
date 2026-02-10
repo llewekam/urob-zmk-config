@@ -28,6 +28,13 @@ fi
 export ZEPHYR_SDK_INSTALL_DIR="${ZEPHYR_SDK_INSTALL_DIR:-$HOME/zephyr-sdk-0.16.9}"
 export ZEPHYR_TOOLCHAIN_VARIANT="${ZEPHYR_TOOLCHAIN_VARIANT:-zephyr}"
 
+# Use Ninja if available, otherwise Unix Makefiles (e.g. macOS without ninja)
+if command -v ninja &>/dev/null; then
+    WEST_EXTRA=()
+else
+    WEST_EXTRA=(-G "Unix Makefiles")
+fi
+
 # Verify SDK is set up
 if [ ! -d "$ZEPHYR_SDK_INSTALL_DIR" ]; then
     echo -e "${RED}Error: Zephyr SDK not found at $ZEPHYR_SDK_INSTALL_DIR${NC}"
@@ -62,8 +69,7 @@ build_shield() {
     cd "$APP_DIR"
     west build -b "$BOARD" \
         --build-dir "$build_dir" \
-        -- -DSHIELD="$shield" \
-           -DZMK_CONFIG="$CONFIG_DIR"
+        -- "${WEST_EXTRA[@]}" -DSHIELD="$shield" -DZMK_CONFIG="$CONFIG_DIR"
     
     # Copy firmware to output directory
     local firmware_file="$build_dir/zephyr/zmk.uf2"

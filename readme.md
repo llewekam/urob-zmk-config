@@ -435,3 +435,59 @@ remaining issues:
     many of the benefits that make Nix uniquely powerful. A better approach,
     though beyond the scope of this document, is to use `home-manager` to
     maintain your user environment.
+
+## Building with build.sh
+
+You can build the Corne firmware (left and right halves) without Nix by running
+`./build.sh` from the repo root. Install the following yourself before building.
+
+### Prerequisites
+
+Install these on your system (versions are what this repo is known to work with):
+
+1. **West** – ZMK’s meta-tool and entry point for building.
+   - macOS: `brew install west`
+   - The script uses whatever Python West’s `west` command uses (e.g. West’s
+     bundled Python when installed via Homebrew).
+
+2. **Zephyr SDK** – ARM toolchain and Zephyr host tools. Use a version compatible
+   with the Zephyr submodule (e.g. 0.16.x for Zephyr 3.5).
+   - Download and install from
+     [Zephyr SDK releases](https://github.com/zephyrproject-rtos/sdk-ng/releases).
+   - Set the install path via `ZEPHYR_SDK_INSTALL_DIR` if it’s not
+     `~/zephyr-sdk-0.16.9` (see [Environment](#environment) below).
+
+3. **Ninja** (recommended) – Build system used by West/CMake by default.
+   - macOS: `brew install ninja`
+   - If Ninja is not installed, the script falls back to Unix Makefiles (slower).
+
+4. **Python dependency for West’s Python** – Zephyr build scripts need
+   **pyelftools**. Install it for the same Python that runs `west` (e.g. the one
+   in West’s shebang when you run `which west`):
+   - Get that Python from the first line of the `west` script:  
+     `head -1 $(which west)` (use the path after `#!`).
+   - Install pyelftools with that interpreter, e.g.:  
+     `python -m pip install --user pyelftools`  
+     (run that command with the Python path from the step above).
+   - Example for Homebrew West:  
+     `/opt/homebrew/Cellar/west/1.5.0/libexec/bin/python -m pip install --user pyelftools`
+
+### Environment
+
+- **ZEPHYR_SDK_INSTALL_DIR** – Where the Zephyr SDK is installed. Default:
+  `$HOME/zephyr-sdk-0.16.9`. Override if you use another path or version.
+- **ZEPHYR_TOOLCHAIN_VARIANT** – Leave unset or set to `zephyr` to use the
+  Zephyr SDK toolchain.
+
+### Usage
+
+From the repo root (the directory that contains `config/`, `zmk/`, and `build.sh`):
+
+```bash
+./build.sh
+```
+
+This builds both `corne_left nice_view_adapter nice_view` and
+`corne_right nice_view_adapter nice_view` and writes `.uf2` images into
+`firmware/`.
+
