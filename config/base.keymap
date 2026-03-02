@@ -329,11 +329,11 @@ ZMK_LAYER(base,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
   &kp GRAVE     &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P      &kp BACKSLASH
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-   &kp TAB   &hml LGUI A  &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G            &kp H         &hmr RCTRL J  &hmr RSHFT K   &hmr RALT L   &hmr RGUI SQT  &kp SINGLE_QUOTE
+   &kp TAB   &hml LGUI A  &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G            &kp H         &hmr RCTRL J  &hmr RSHFT K   &hmr RALT L   &hmr RGUI SEMI  &kp SINGLE_QUOTE
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-  WHISPER    &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH       SAVE_SONG
+&lt NUM TAB   &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M   &comma_morph  &dot_morph    &kp FSLH    &lt SYM SINGLE_QUOTE
 //╰──────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
-                                         &lt FN LGUI    &lt NUM RET &lt SYM ESCAPE  &lt SYS BACKSPACE &lt NUM SPACE &smart_shft
+                                         &kp LGUI    &lt NUM RET &lt SYM ESCAPE  &lt SYS BACKSPACE &lt NUM SPACE &smart_shft
 //                                     ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
 )
 
