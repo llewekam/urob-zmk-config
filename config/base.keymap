@@ -327,13 +327,13 @@ ZMK_MACRO(minimize, bindings = <&kp LG(M)>; wait-ms = <0>; tap-ms = <5>;)
 
 ZMK_LAYER(base,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-   SLEEP     &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P           MUTE
+  &kp GRAVE     &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P      &kp BACKSLASH
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-   SFT_RET   &hml LCTRL A  &hml LALT S   &hml LGUI D   &hml LSHFT F  &kp G            &kp H         &hmr RSHFT J  &hmr RGUI K   &hmr RALT L   &hmr RCTRL SQT  TOG_NAV
+   &kp TAB   &hml LGUI A  &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G            &kp H         &hmr RCTRL J  &hmr RSHFT K   &hmr RALT L   &hmr RGUI SQT  &kp SINGLE_QUOTE
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
   WHISPER    &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH       SAVE_SONG
 //╰──────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
-                                         &lt FN ESC    &lt_spc NAV 0 &lt SYM TAB      &lt SYS RETURN &lt NUM BSPC &smart_shft
+                                         &lt FN LGUI    &lt NUM RET &lt SYM ESCAPE  &lt SYS BACKSPACE &lt NUM SPACE &smart_shft
 //                                     ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
 )
 
