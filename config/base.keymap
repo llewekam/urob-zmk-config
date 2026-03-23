@@ -332,7 +332,7 @@ ZMK_LAYER(base,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
    &kp TAB   &hml LGUI A  &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G            &kp H         &hmr RCTRL J  &hmr RSHFT K   &hmr RALT L   &hmr RGUI SEMI  &kp SINGLE_QUOTE
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-&lt NUM TAB   &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M   &comma_morph  &dot_morph    &kp FSLH    &lt SYM SINGLE_QUOTE
+&lt NUM TAB   &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M        &kp COMMA      &kp DOT      &kp FSLH    &lt SYM SINGLE_QUOTE
 //╰──────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
                                          &kp LGUI      &lt NAV RET   &kp ESCAPE    &kp BACKSPACE &kp SPACE   &lt NUM SPACE
 //                                     ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
